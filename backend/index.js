@@ -1,8 +1,14 @@
 const express = require('express');
 const mongoose = require('mongoose');
+const User = require('./models/User');
+const Transaction = require('./models/Transaction');
+const Coupon = require('./models/Coupon');
+
+
 require('dotenv').config();
 
 const app = express();
+
 app.use(express.json());
 
 // Import routes

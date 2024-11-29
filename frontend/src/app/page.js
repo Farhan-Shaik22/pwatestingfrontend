@@ -1,6 +1,7 @@
 import MobileDialpad from '@/components/mobile-dialpad';
 import InstallPrompt from './_components/IosInstall';
 import PushNotificationManager from './_components/SubscriptionManager';
+import RazorpayPayment from '@/components/Payment';
 
 export default function HomePage() {
   return (
@@ -10,8 +11,10 @@ export default function HomePage() {
         This app allows you to subscribe to push notifications and experience the benefits of a Progressive Web App (PWA).
       </p>
       <PushNotificationManager />
-      <MobileDialpad/>
+      {/* <MobileDialpad/> */}
+      <RazorpayPayment/>
       <InstallPrompt/>
+
     </div>
   );
 }

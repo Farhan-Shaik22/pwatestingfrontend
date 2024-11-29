@@ -3,10 +3,20 @@ const mongoose = require('mongoose');
 const User = require('./models/User');
 const Transaction = require('./models/Transaction');
 const Coupon = require('./models/Coupon');
+const bodyParser = require("body-parser");
+const cors = require("cors");
+const paymentRoutes = require("./payment");
 
 
 require('dotenv').config();
 const app = express();
+
+// Middleware
+app.use(bodyParser.json());
+app.use(cors());
+
+// Routes
+app.use("/api/payment", paymentRoutes);
 
 app.use(express.json());
 
